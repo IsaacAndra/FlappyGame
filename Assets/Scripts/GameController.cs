@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour
     //creating score
     private void gameScore()
     {
-        score += Time.deltaTime;
+        score += Time.deltaTime * level;
         
         scoreText.text ="Time Score " + Mathf.Round(score).ToString();
         
