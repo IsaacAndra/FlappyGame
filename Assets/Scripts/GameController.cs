@@ -11,15 +11,25 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject enemy;
     [SerializeField] private Vector3 posicao;
 
+    //Variables of y direction
     [SerializeField] private float posMin = -1.4f;
     [SerializeField] private float posMax = 1.1f;
 
+    //Variables of x direction
     [SerializeField] private float intervalMin = 1f;
     [SerializeField] private float intervalMax = 1.5f;
 
+    //Score Variables
     [SerializeField] private Text scoreText;
-
     private float score = 0;
+
+    //Variable of level
+    private int level = 1;
+    [SerializeField] private Text levelText;
+
+
+    //Variable for take more level
+    [SerializeField] private float nextLevel = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +42,7 @@ public class GameController : MonoBehaviour
     {
         GenerateEnemy();
         gameScore();
+        LevelUpdate();
         
     }
 
@@ -42,6 +53,22 @@ public class GameController : MonoBehaviour
         
         scoreText.text ="Time Score " + Mathf.Round(score).ToString();
         
+    }
+
+    //ganing level
+    private void LevelUpdate()
+    {
+        if(score > nextLevel)
+        {
+            //Increase the level in 1
+            level++;
+            //Doubling the next level value
+            nextLevel *= 2;                     
+        }
+
+        //Level in Canvas
+        levelText.text = "Lv " + level.ToString();
+
     }
 
 
