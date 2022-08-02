@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float speed = 4f;
     [SerializeField] private GameObject me;
     [SerializeField] private GameController game;
 
@@ -22,7 +22,8 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         enemyMove();
-        speed = 2f + game.LevelReturn();
+        speed = 4f + game.LevelReturn();
+
     }
 
     public void enemyMove()

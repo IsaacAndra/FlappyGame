@@ -24,6 +24,17 @@ public class PlayerController : MonoBehaviour
     {
         playerInput();
         velocityLimit();
+        LimitPlayer();
+
+    }
+
+    private void LimitPlayer()
+    {
+        var myPosition = transform.position.y;
+        if (myPosition > 5.5 || myPosition < -5.5)
+        {
+            SceneManager.LoadScene("Jogo");
+        }
     }
 
     private void playerInput()
