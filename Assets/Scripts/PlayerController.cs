@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         playerInput();
+        velocityLimit();
     }
 
     private void playerInput()
@@ -32,12 +33,14 @@ public class PlayerController : MonoBehaviour
             //making the impulse velocity from rb;
             rb.velocity = Vector2.up * velocity;
         }
+    }
 
+    private void velocityLimit()
+    {
         if (rb.velocity.y < -velocity)
         {
             //sttoping rb.velocity.y in -5f;
             rb.velocity = Vector2.down * velocity;
         }
     }
-
 }
