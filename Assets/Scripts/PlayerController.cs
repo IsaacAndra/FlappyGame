@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour
     //creating we atributes.
     private Rigidbody2D rb;
 
+    [SerializeField] GameObject puff;
     [SerializeField] private float velocity = 5f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +46,10 @@ public class PlayerController : MonoBehaviour
         {
             //making the impulse velocity from rb;
             rb.velocity = Vector2.up * velocity;
+
+            GameObject meuPuf = Instantiate(puff, transform.position, Quaternion.identity);
+
+            Destroy(meuPuf, 0.4f);
         }
     }
 

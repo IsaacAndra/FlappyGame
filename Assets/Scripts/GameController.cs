@@ -10,7 +10,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private float timer = 1f;
 
     [SerializeField] private GameObject enemy;
+    [SerializeField] private AudioClip soundLevel;
     [SerializeField] private Vector3 posicao;
+    [SerializeField] private Vector3 camPos;
 
     //Variables of y direction
     [SerializeField] private float posMin = -1.4f;
@@ -35,7 +37,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        camPos = Camera.main.transform.position;
     }
 
     // Update is called once per frame
@@ -61,6 +63,10 @@ public class GameController : MonoBehaviour
     {
         if(score > nextLevel)
         {
+
+            //soundLevel
+            AudioSource.PlayClipAtPoint(soundLevel, camPos, 0.5f);
+
             //Increase the level in 1
             level++;
             //Doubling the next level value
