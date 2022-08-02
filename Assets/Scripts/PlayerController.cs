@@ -14,10 +14,17 @@ public class PlayerController : MonoBehaviour
     {
         //Getting my RigidBody
         rb = GetComponent<Rigidbody2D>();
+        
     }
+
 
     // Update is called once per frame
     void Update()
+    {
+        playerInput();
+    }
+
+    private void playerInput()
     {
         //Input Impulse
         if (Input.GetKeyDown(KeyCode.Space))
@@ -25,5 +32,12 @@ public class PlayerController : MonoBehaviour
             //making the impulse velocity from rb;
             rb.velocity = Vector2.up * velocity;
         }
+
+        if (rb.velocity.y < -velocity)
+        {
+            //sttoping rb.velocity.y in -5f;
+            rb.velocity = Vector2.down * velocity;
+        }
     }
+
 }
