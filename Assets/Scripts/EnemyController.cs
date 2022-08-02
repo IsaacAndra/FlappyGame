@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
         enemyMove();
     }
 
-    private void enemyMove()
+    public void enemyMove()
     {
         //making the enemy to the left
         transform.position += Vector3.left * speed * Time.deltaTime;
