@@ -9,6 +9,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject enemy;
     [SerializeField] private Vector3 posicao;
 
+    [SerializeField] private float posMin = -1.4f;
+    [SerializeField] private float posMax = 1.1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,8 @@ public class GameController : MonoBehaviour
         {
             Debug.Log("Oi");
             timer = 1f;
+
+            posicao.y = Random.Range(posMin, posMax);
 
             //creating the enemies
             Instantiate(enemy, posicao, Quaternion.identity);

@@ -143,6 +143,8 @@ MonoBehaviour:
   timer: 1
   enemy: {fileID: 9150567782156118396, guid: 8462bd91ff347214c916fa589f5f9a5d, type: 3}
   posicao: {x: 12, y: 0, z: 0}
+  posMin: -1.4
+  posMax: 1.1
 --- !u!1001 &367015022620364815
 PrefabInstance:
   m_ObjectHideFlags: 0
