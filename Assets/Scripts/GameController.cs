@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
 
+
     [SerializeField] private float timer = 1f;
 
     [SerializeField] private GameObject enemy;
@@ -80,7 +81,7 @@ public class GameController : MonoBehaviour
         {
             //Hello Whorld at 1sec
             //Debug.Log("Hello World");
-            timer = Random.Range(intervalMin, intervalMax);
+            timer = Random.Range(intervalMin / level, intervalMax);
 
             posicao.y = Random.Range(posMin, posMax);
 
@@ -89,6 +90,9 @@ public class GameController : MonoBehaviour
         }
     }
 
-
+    public int LevelReturn()
+    {
+        return level;
+    }
 
 }

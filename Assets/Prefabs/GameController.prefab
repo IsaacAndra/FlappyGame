@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4991385718784473326}
+  - component: {fileID: 1980599373}
   m_Layer: 0
-  m_Name: GenerateEnemy
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,3 +32,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1980599373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501002532997002377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cdbae904fb498c4d9d2e9d4fdb2b3a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 1
+  enemy: {fileID: 9150567782156118396, guid: 8462bd91ff347214c916fa589f5f9a5d, type: 3}
+  posicao: {x: 12, y: 0, z: 0}
+  posMin: -1.4
+  posMax: 1.1
+  intervalMin: 1
+  intervalMax: 2.3
+  scoreText: {fileID: 0}
+  levelText: {fileID: 0}
+  nextLevel: 10
