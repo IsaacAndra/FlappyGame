@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -42,5 +43,10 @@ public class PlayerController : MonoBehaviour
             //sttoping rb.velocity.y in -5f;
             rb.velocity = Vector2.down * velocity;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {      
+        SceneManager.LoadScene("Jogo");
     }
 }
