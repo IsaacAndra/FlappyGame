@@ -12,6 +12,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private float posMin = -1.4f;
     [SerializeField] private float posMax = 1.1f;
 
+    [SerializeField] private float intervalMin = 1f;
+    [SerializeField] private float intervalMax = 1.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +27,9 @@ public class GameController : MonoBehaviour
         timer += - Time.deltaTime;
         if(timer <= 0)
         {
-            Debug.Log("Oi");
-            timer = 1f;
+            //Hello Whorld at 1sec
+            Debug.Log("Hello World");
+            timer = Random.Range(intervalMin, intervalMax);
 
             posicao.y = Random.Range(posMin, posMax);
 
@@ -34,7 +38,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    //Hello Whorld at 1sec
+    
 
 
 }
